@@ -1,0 +1,78 @@
+### prepare ###
+mkdir ~/downloads
+
+### node ###
+nvm ls # shows all installed node versions
+nvm install 5.6
+nvm alias default 5.6
+
+### python ###
+cd ~/downloads
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+conda list
+conda install jupyter numpy scipy sympy matplotlib pandas unicodecsv seaborn
+pip install pika httpie
+
+### jupyter ###
+jupyter notebook --no-browser --port=8081 --ip=0.0.0.0
+https://_____-chyld.c9users.io:8081
+
+### cloud foundry ###
+cd ~/downloads
+https://github.com/cloudfoundry/cli/releases
+Debian 64bit installer
+wget -O cf.deb https://cli.run.pivotal.io/stable?release=debian64&version=6.15.0&source=github-rel
+sudo dpkg -i cf.deb
+
+### rabbit mq ###
+https://www.rabbitmq.com/download.html
+cd ~/downloads
+wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server_3.6.0-1_all.deb
+sudo dpkg -i rabbitmq.deb
+
+### miscellaneous ###
+change theme
+change custom font (source code pro) - both terminal and editor
+
+vi ~/.bash_aliases
+alias b="cd .."
+alias c="clear"
+alias code="cd ~/workspace"
+alias jup="jupyter notebook --no-browser --port 8082 --ip=0.0.0.0"
+alias qs="sudo rabbitmqctl list_queues"
+
+cd ~
+rm .gitconfig
+wget https://raw.githubusercontent.com/chyld/devops/master/.gitconfig
+
+cd ~/downloads
+rm *
+
+*******************************************************************************************************
+AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS
+*******************************************************************************************************
+
+### RABBIT MQ ###
+sudo apt-get install erlang-nox
+wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server_3.6.0-1_all.deb
+sudo dpkg -i rabbitmq.deb
+
+sudo rabbitmq-plugins enable rabbitmq_management
+sudo rabbitmq-plugins enable rabbitmq_management_visualiser
+sudo rabbitmq-plugins list
+
+sudo vi /etc/rabbitmq/rabbitmq.config
+[{rabbit, [{loopback_users, []}]}].
+
+sudo reboot
+
+sudo rabbitmqctl status
+
+open firewall port
+http://IP_ADDRESS:15672
+guest/guest
+
+*******************************************************************************************************
+AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS AWS
+*******************************************************************************************************

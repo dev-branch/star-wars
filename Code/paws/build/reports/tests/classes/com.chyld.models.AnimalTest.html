@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.chyld.models.AnimalTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.chyld.models.AnimalTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.chyld.models.html">com.chyld.models</a> &gt; AnimalTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.528s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">shouldCreateNewAnimalAndSave</td>
+<td>0.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldDeleteExistingAnimal</td>
+<td>0.036s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldGetExistingAnimal</td>
+<td>1.365s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotSaveDueToNullName</td>
+<td>0.035s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldUpdateExistingAnimal</td>
+<td>0.053s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 0
+Hibernate: 
+    truncate table animals
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 1
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.243 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.247 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Fido]
+12:19:43.248 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.249 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.249 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+Hibernate: 
+    select
+        animal0_.id as id1_0_0_,
+        animal0_.birthday as birthday2_0_0_,
+        animal0_.name as name3_0_0_,
+        animal0_.placement as placemen4_0_0_,
+        animal0_.sex as sex5_0_0_,
+        animal0_.shelter_id as shelter_7_0_0_,
+        animal0_.species as species6_0_0_,
+        shelter1_.id as id1_2_1_,
+        shelter1_.name as name2_2_1_,
+        shelter1_.opened as opened3_2_1_ 
+    from
+        animals animal0_ 
+    left outer join
+        shelters shelter1_ 
+            on animal0_.shelter_id=shelter1_.id 
+    where
+        animal0_.id=?
+12:19:43.271 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 0
+Hibernate: 
+    truncate table animals
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 1
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.307 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.308 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Fido]
+12:19:43.308 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.308 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.308 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+Hibernate: 
+    select
+        animal0_.id as id1_0_0_,
+        animal0_.birthday as birthday2_0_0_,
+        animal0_.name as name3_0_0_,
+        animal0_.placement as placemen4_0_0_,
+        animal0_.sex as sex5_0_0_,
+        animal0_.shelter_id as shelter_7_0_0_,
+        animal0_.species as species6_0_0_,
+        shelter1_.id as id1_2_1_,
+        shelter1_.name as name2_2_1_,
+        shelter1_.opened as opened3_2_1_ 
+    from
+        animals animal0_ 
+    left outer join
+        shelters shelter1_ 
+            on animal0_.shelter_id=shelter1_.id 
+    where
+        animal0_.id=?
+12:19:43.316 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    update
+        animals 
+    set
+        birthday=?,
+        name=?,
+        placement=?,
+        sex=?,
+        shelter_id=?,
+        species=? 
+    where
+        id=?
+12:19:43.324 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [2000-01-02]
+12:19:43.325 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Bilbo]
+12:19:43.325 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [2015-12-10]
+12:19:43.325 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.325 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+12:19:43.326 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [INTEGER] - [1]
+Hibernate: 
+    select
+        animal0_.id as id1_0_0_,
+        animal0_.birthday as birthday2_0_0_,
+        animal0_.name as name3_0_0_,
+        animal0_.placement as placemen4_0_0_,
+        animal0_.sex as sex5_0_0_,
+        animal0_.shelter_id as shelter_7_0_0_,
+        animal0_.species as species6_0_0_ 
+    from
+        animals animal0_ 
+    where
+        animal0_.id=?
+12:19:43.334 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 0
+Hibernate: 
+    truncate table animals
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 1
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.365 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.366 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Fido]
+12:19:43.366 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.366 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.366 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 0
+Hibernate: 
+    truncate table animals
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 1
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.395 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.395 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Fido]
+12:19:43.396 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.396 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.396 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+Hibernate: 
+    delete 
+    from
+        animals 
+    where
+        id=?
+12:19:43.405 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 0
+Hibernate: 
+    truncate table animals
+Hibernate: 
+    
+set
+    FOREIGN_KEY_CHECKS = 1
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.432 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.432 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Fido]
+12:19:43.432 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.433 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.433 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Dog]
+Hibernate: 
+    insert 
+    into
+        animals
+        (birthday, name, placement, sex, shelter_id, species) 
+    values
+        (?, ?, ?, ?, ?, ?)
+12:19:43.440 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DATE] - [Mon Jan 03 00:00:00 CST 2000]
+12:19:43.440 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Molly]
+12:19:43.440 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DATE] - [Fri Dec 11 00:00:00 CST 2015]
+12:19:43.441 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [INTEGER] - [null]
+12:19:43.441 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [Cat]
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Thu Aug 11 12:19:42 CDT 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 2.14.1</a> at Aug 11, 2016 12:19:43 PM</p>
+</div>
+</div>
+</body>
+</html>

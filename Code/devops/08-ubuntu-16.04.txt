@@ -1,0 +1,74 @@
+# REBOOT AS NEEDED #
+
+
+## GENERAL
+ps -ef | grep dpkg # make sure dpkg is not already running
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install open-vm-tools
+sudo apt-get install open-vm-tools-desktop
++ snapshot vm
+
+
+## APPLICATIONS
+Disable Power Save Feature
+Download: Chrome, VSCode, Atom, Sublime Text 3; Double Click to Install; Use ps -ef | grep dpkg to see when install finished
+Set Chrome, Firefox home to Google
+Chrome setting select "Use System Titlebar & Borders"
+Start up all Editors and Browsers
+Pin all favorites to Menu
+Remove the menus from all the Editors and Browsers
+# fonts #
+Clone https://github.com/braver/fonts to ~/.fonts # only resources sub-folder
+Clone https://github.com/supermarin/YosemiteSanFranciscoFont to ~/.fonts # only 4 main .ttf files
+Use http://app.programmingfonts.org/ to View Fonts
+# terminix
+https://github.com/gnunn1/terminix/releases
+$ sudo unzip terminix.zip -d /
+$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+$ sudo vi /usr/share/applications/com.gexperts.Terminix.desktop # change icon to utilities-terminal
+$ # reboot gnome FN + ALT + F2 -> r -> ENTER
+* http://terminal.sexy/ # terminal color schemes
+# icons in dock
+chrome, firefox, terminix, atom, vscode, sublime, file manager, tweak tool, settings, calculator (advanced)
++ snapshot vm
+
+
+## STYLE
+https://github.com/horst3180/Arc-theme
+
+sudo add-apt-repository ppa:snwh/pulp
+sudo apt-get update
+sudo apt-get install paper-icon-theme paper-gtk-theme
+
+sudo add-apt-repository ppa:moka/daily
+sudo apt-get update
+sudo apt-get install moka-icon-theme
+
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme-circle
+
+TWEAK TOOL
+Extensions -> User Themes
+Extensions -> Alternate Tab
+Extensions -> Places Status Indicator
+Extensions -> Workspace Indicator
+Extensions -> Dash to Dock (on Website) + Configure # custom color dots for each running instance
+Add Min and Max Buttons
+Make 3 Static Workspaces
+Theme : Arc-Dark
+Icons : Numix-Circle
+Cursors: Paper
+Shell Theme : Arc-Dark
+Fonts -> Window Titles -> SFNS Display Bold, 10pt
+Fonts -> Interface -> SFNS Display Bold, 10pt
+
+/usr/share/icons/Numix-Circle/48x48/apps
+sudo rm code.svg atom.svg
+sudo rm /usr/share/icons/Numix-Circle/icon-theme.cache
+sudo gtk-update-icon-cache -f /usr/share/icons/Numix-Circle
+
+sudo vi /usr/share/applications/com.gexperts.Terminix.desktop # final-term -> icon
+sudo vi /usr/share/applications/firefox.desktop # firewall -> icon
++ snapshot vm

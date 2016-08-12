@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.chyld.models.ClientTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-08-11T17:19:43" hostname="Chylds-MacBook-Pro.local" time="0.06">
+  <properties/>
+  <testcase name="shouldNotSaveDueToNameTooLong" classname="com.chyld.models.ClientTest" time="0.033"/>
+  <testcase name="shouldCreateNewClientAndSave" classname="com.chyld.models.ClientTest" time="0.026"/>
+  <system-out><![CDATA[Hibernate: 
+    truncate table clients
+Hibernate: 
+    insert 
+    into
+        clients
+        (name) 
+    values
+        (?)
+12:19:43.472 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [01234567890123456789012345678901234567890123456789]
+12:19:43.480 [Test worker] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Data truncation: Data too long for column 'name' at row 1
+Hibernate: 
+    truncate table clients
+Hibernate: 
+    insert 
+    into
+        clients
+        (name) 
+    values
+        (?)
+12:19:43.505 [Test worker] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [jennifer]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
